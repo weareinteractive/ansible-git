@@ -1,0 +1,17 @@
+---
+
+- hosts: all
+  vars_files:
+    - 'defaults/main.yml'
+  tasks:
+    - include: 'tasks/main.yml'
+      vars:
+        git_latest: yes
+        git_config:
+          color:
+            diff: auto
+            branch: auto
+            status: auto
+            interactive: auto
+          push:
+            default: matching

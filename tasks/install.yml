@@ -1,0 +1,20 @@
+---
+
+- name: Adding apt repository
+  apt_repository: >
+    repo={{ git_latest_repo }}
+    update_cache=yes
+  when: git_latest
+  tags:
+    - development
+    - git
+
+- name: Installing packages
+  apt: >
+    pkg={{ item }}
+    state=latest
+  with_items:
+    - git
+  tags:
+    - development
+    - git
