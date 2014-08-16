@@ -6,7 +6,6 @@
   tasks:
     - include: 'tasks/main.yml'
       vars:
-        git_latest: yes
         git_config:
           color:
             diff: auto

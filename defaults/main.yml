@@ -12,9 +12,5 @@
 #     default: matching
 #
 
-# use repo to install latest git
-git_latest: no
-# lastest git repo path
-git_latest_repo: ppa:git-core/ppa
 # git global configuration settings
 git_config: {}

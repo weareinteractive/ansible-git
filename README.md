@@ -1,11 +1,12 @@
 # Ansible Git Role
 
-[![Build Status](https://travis-ci.org/weareinteractive/ansible-role-git.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-role-git)
-[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-role-git.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-role-git)
+[![Build Status](https://travis-ci.org/weareinteractive/ansible-git.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-git)
+[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-git.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-git)
 
 > `git` is an [ansible](http://www.ansible.com) role which: 
 > 
 > * installs git
+> * set global options
 
 ## Installation
 
@@ -24,7 +25,7 @@ $ arm install franklinkim.git
 Using `git`:
 
 ```
-$ git clone https://github.com/weareinteractive/ansible-role-git.git
+$ git clone https://github.com/weareinteractive/ansible-git.git
 ```
 
 ## Variables
@@ -40,10 +41,6 @@ $ git clone https://github.com/weareinteractive/ansible-role-git.git
 #     default: matching
 #
 
-# use repo to install latest git
-git_latest: no
-# lastest git repo path
-git_latest_repo: ppa:git-core/ppa
 # git global configuration settings
 git_config: {}
 ```
@@ -55,7 +52,6 @@ git_config: {}
   roles: 
     - franklinkim.git
   vars:
-    git_latest: yes
     git_config:
       color:
         diff: auto
@@ -69,8 +65,8 @@ git_config: {}
 ## Testing
 
 ```
-$ git clone https://github.com/weareinteractive/ansible-role-git.git
-$ cd ansible-role-git
+$ git clone https://github.com/weareinteractive/ansible-git.git
+$ cd ansible-git
 $ vagrant up
 ```
 
