@@ -1,16 +1,14 @@
 ---
 
 - hosts: all
-  vars_files:
-    - 'defaults/main.yml'
-  tasks:
-    - include: 'tasks/main.yml'
-      vars:
-        git_config:
-          color:
-            diff: auto
-            branch: auto
-            status: auto
-            interactive: auto
-          push:
-            default: matching
+  roles:
+    - franklinkim.git
+  vars:
+    git_config:
+      color:
+        diff: auto
+        branch: auto
+        status: auto
+        interactive: auto
+      push:
+        default: matching

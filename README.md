@@ -30,6 +30,8 @@ $ git clone https://github.com/weareinteractive/ansible-git.git
 
 ## Variables
 
+Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
+
 ```
 # git_config:
 #   color:
@@ -60,6 +62,15 @@ git_config: {}
         interactive: auto
       push:
         default: matching    
+```
+
+## Notes
+
+You can use `franklinkim.apt` to add a repository to get the latest `git`:
+
+```
+apt_repositories:
+  - 'ppa:git-core/ppa'
 ```
 
 ## Testing
