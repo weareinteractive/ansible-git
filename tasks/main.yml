@@ -1,4 +1,13 @@
 ---
 
 - include: install.yml
+  tags:
+    - development
+    - git
+    - git-install
+
 - include: config.yml
+  tags:
+    - development
+    - git
+    - git-config

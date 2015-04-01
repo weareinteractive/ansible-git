@@ -1,13 +1,9 @@
 ---
 
 - name: Configuring git
-  template: >
-    src=etc-gitconfig.j2
-    dest=/etc/gitconfig
-    owner=root
-    group=root
-    mode=0644
-  tags:
-    - development
-    - git
-    - config
+  template:
+    src: etc-gitconfig.j2
+    dest: /etc/gitconfig
+    owner: root
+    group: root
+    mode: 0644

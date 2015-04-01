@@ -3,10 +3,10 @@
 [![Build Status](https://travis-ci.org/weareinteractive/ansible-git.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-git)
 [![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-git.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-git)
 
-> `git` is an [ansible](http://www.ansible.com) role which: 
-> 
+> `git` is an [ansible](http://www.ansible.com) role which:
+>
 > * installs git
-> * set global options
+> * configures git
 
 ## Installation
 
@@ -16,10 +16,10 @@ Using `ansible-galaxy`:
 $ ansible-galaxy install franklinkim.git
 ```
 
-Using `arm` ([Ansible Role Manager](https://github.com/mirskytech/ansible-role-manager/)):
+Using `requirements.yml`:
 
 ```
-$ arm install franklinkim.git
+- src: franklinkim.git
 ```
 
 Using `git`:
@@ -43,6 +43,10 @@ Here is a list of all the default variables for this role, which are also availa
 #     default: matching
 #
 
+# apt repository
+git_repo: ppa:git-core/ppa
+# define package (version)
+git_package: git-core
 # git global configuration settings
 git_config: {}
 ```
@@ -51,7 +55,8 @@ git_config: {}
 
 ```
 - host: all
-  roles: 
+  sudo: yes
+  roles:
     - franklinkim.git
   vars:
     git_config:
@@ -61,16 +66,7 @@ git_config: {}
         status: auto
         interactive: auto
       push:
-        default: matching    
-```
-
-## Notes
-
-You can use `franklinkim.apt` to add a repository to get the latest `git`:
-
-```
-apt_repositories:
-  - 'ppa:git-core/ppa'
+        default: matching
 ```
 
 ## Testing
