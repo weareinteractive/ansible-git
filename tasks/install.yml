@@ -1,12 +1,11 @@
 ---
 
+- name: Adding APT repository
+  apt_repository:
+    repo: "{{ git_repo }}"
+    update_cache: yes
+
 - name: Installing packages
-  apt: >
-    pkg={{ item }}
-    state=present
-  with_items:
-    - git
-  tags:
-    - development
-    - git
-    - install
+  apt:
+    pkg: "{{ git_package }}"
+    state: present

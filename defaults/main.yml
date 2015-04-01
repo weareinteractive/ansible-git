@@ -12,5 +12,9 @@
 #     default: matching
 #
 
+# apt repository
+git_repo: ppa:git-core/ppa
+# define package (version)
+git_package: git-core
 # git global configuration settings
 git_config: {}
