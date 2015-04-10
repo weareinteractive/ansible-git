@@ -1,7 +1,9 @@
 # Ansible Git Role
 
-[![Build Status](https://travis-ci.org/weareinteractive/ansible-git.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-git)
-[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-git.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-git)
+[![Build Status](https://img.shields.io/travis/weareinteractive/ansible-git.svg)](https://travis-ci.org/weareinteractive/ansible-git)
+[![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.supervisor-blue.svg)](https://galaxy.ansible.com/list#/roles/1370)
+[![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-git.svg)](https://github.com/weareinteractive/ansible-git)
+[![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-git.svg)](https://github.com/weareinteractive/ansible-git)
 
 > `git` is an [ansible](http://www.ansible.com) role which:
 >
@@ -25,8 +27,12 @@ Using `requirements.yml`:
 Using `git`:
 
 ```
-$ git clone https://github.com/weareinteractive/ansible-git.git
+$ git clone https://github.com/weareinteractive/ansible-git.git franklinkim.git
 ```
+
+## Dependencies
+
+* Ansible 1.9
 
 ## Variables
 
@@ -49,6 +55,8 @@ git_repo: ppa:git-core/ppa
 git_package: git-core
 # git global configuration settings
 git_config: {}
+# optional git user for git operations
+git_user:
 ```
 
 ## Example playbook
@@ -67,6 +75,9 @@ git_config: {}
         interactive: auto
       push:
         default: matching
+    git_repositories:
+      - repo: https://github.com/weareinteractive/ansible-git.git
+        dest: /tmp/franklinkim.git
 ```
 
 ## Testing

@@ -13,3 +13,6 @@
         interactive: auto
       push:
         default: matching
+    git_repositories:
+      - repo: https://github.com/weareinteractive/ansible-git.git
+        dest: /tmp/franklinkim.git

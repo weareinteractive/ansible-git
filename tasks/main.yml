@@ -4,10 +4,19 @@
   tags:
     - development
     - git
+    - install
     - git-install
 
 - include: config.yml
   tags:
     - development
     - git
+    - config
     - git-config
+
+- include: manage.yml
+  tags:
+    - development
+    - git
+    - mange
+    - git-manage

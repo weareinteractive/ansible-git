@@ -1,0 +1,31 @@
+---
+
+- name: Managing repositories
+  git:
+    accept_hostkey: "{{ item.accept_hostkey if item.accept_hostkey is defined else (git_accept_hostkey if git_accept_hostkey else omit) }}"
+    bare: "{{ item.bare | default(omit) }}"
+    clone: "{{ item.clone | default(omit) }}"
+    depth: "{{ item.depth | default(omit) }}"
+    dest: "{{ item.dest }}"
+    force: "{{ item.force | default(omit) }}"
+    key_file: "{{ item.key_file if item.key_file is defined else (git_key_file if git_key_file else ('/etc/ssh/ssh_git.key' if git_key else omit)) }}"
+    recursive: "{{ item.recursive | default(omit) }}"
+    reference: "{{ item.reference | default(omit) }}"
+    refspec: "{{ item.refspec | default(omit) }}"
+    remote: "{{ item.remote | default(omit) }}"
+    repo: "{{ item.repo }}"
+    ssh_opts: "{{ item.ssh_opts | default(omit) }}"
+    track_submodules: "{{ item.track_submodules | default(omit) }}"
+    update: "{{ item.pull if item.pull is defined else (git_pull if git_pull else omit) }}"
+    version: "{{ item.version | default(omit) }}"
+  with_items: git_repositories
+
+- name: Setting mode on repositories
+  file:
+    path: "{{ item.dest }}"
+    mode: "{{ item.mode if item.mode is defined else (git_mode if git_mode else omit) }}"
+    owner: "{{ item.owner if item.owner is defined else (git_owner if git_owner else omit) }}"
+    group: "{{ item.group if item.group is defined else (git_group if git_group else omit) }}"
+    recurse: true
+  with_items: git_repositories
+  when: git_repositories
