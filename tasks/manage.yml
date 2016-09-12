@@ -18,7 +18,7 @@
     track_submodules: "{{ item.track_submodules | default(omit) }}"
     update: "{{ item.pull if item.pull is defined else (git_pull if git_pull else omit) }}"
     version: "{{ item.version | default(omit) }}"
-  with_items: git_repositories
+  with_items: "{{ git_repositories }}"
 
 - name: Setting mode on repositories
   file:
@@ -27,5 +27,5 @@
     owner: "{{ item.owner if item.owner is defined else (git_owner if git_owner else omit) }}"
     group: "{{ item.group if item.group is defined else (git_group if git_group else omit) }}"
     recurse: true
-  with_items: git_repositories
+  with_items: "{{ git_repositories }}"
   when: git_repositories
