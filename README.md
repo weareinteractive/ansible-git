@@ -1,44 +1,49 @@
-# Ansible Git Role
+# Ansible franklinkim.git role
 
 [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-git.svg)](https://travis-ci.org/weareinteractive/ansible-git)
-[![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.supervisor-blue.svg)](https://galaxy.ansible.com/list#/roles/1370)
+[![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.git-blue.svg)](https://galaxy.ansible.com/franklinkim/git)
 [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-git.svg)](https://github.com/weareinteractive/ansible-git)
 [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-git.svg)](https://github.com/weareinteractive/ansible-git)
 
-> `git` is an [ansible](http://www.ansible.com) role which:
+> `franklinkim.git` is an [Ansible](http://www.ansible.com) role which:
 >
 > * installs git
 > * configures git
+> * manages repositories
 
 ## Installation
 
 Using `ansible-galaxy`:
 
-```
+```shell
 $ ansible-galaxy install franklinkim.git
 ```
 
 Using `requirements.yml`:
 
-```
+```yaml
 - src: franklinkim.git
 ```
 
 Using `git`:
 
-```
+```shell
 $ git clone https://github.com/weareinteractive/ansible-git.git franklinkim.git
 ```
 
 ## Dependencies
 
-* Ansible 1.9
+* Ansible >= 2.0
 
 ## Variables
 
 Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
 
-```
+```yaml
+---
+# For more information about default variables see:
+# http://www.ansibleworks.com/docs/playbooks_variables.html#id26
+#
 # git_config:
 #   color:
 #     branch: auto
@@ -92,13 +97,18 @@ git_mode:
 git_owner:
 # optional default repository group
 git_group:
-```
-
-## Example playbook
 
 ```
-- host: all
-  sudo: yes
+
+
+## Usage
+
+This is an example playbook:
+
+```yaml
+---
+
+- hosts: all
   roles:
     - franklinkim.git
   vars:
@@ -113,25 +123,33 @@ git_group:
     git_repositories:
       - repo: https://github.com/weareinteractive/ansible-git.git
         dest: /tmp/franklinkim.git
+
 ```
+
 
 ## Testing
 
-```
+```shell
 $ git clone https://github.com/weareinteractive/ansible-git.git
 $ cd ansible-git
-$ vagrant up
+$ make test
 ```
 
 ## Contributing
-
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests and examples for any new or changed functionality.
+In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests and examples for any new or changed functionality.
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+*Note: To update the `README.md` file please install and run `ansible-role`:*
+
+```shell
+$ gem install ansible-role
+$ ansible-role docgen
+```
 
 ## License
 Copyright (c) We Are Interactive under the MIT license.
