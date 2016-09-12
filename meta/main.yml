@@ -1,6 +1,7 @@
 ---
+
 galaxy_info:
-  author: franklin
+  author: franklin <franklin@weareinteractive.com>
   company: We Are Interactive
   description: Installs git and sets global options
   min_ansible_version: 1.9
