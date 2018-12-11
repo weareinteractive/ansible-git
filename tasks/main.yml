@@ -1,20 +1,20 @@
 ---
 
-- include: install.yml
+- import_tasks: install.yml
   tags:
     - development
     - git
     - install
     - git-install
 
-- include: config.yml
+- import_tasks: config.yml
   tags:
     - development
     - git
     - config
     - git-config
 
-- include: manage.yml
+- import_tasks: manage.yml
   tags:
     - development
     - git

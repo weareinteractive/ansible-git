@@ -1,13 +1,17 @@
 ---
-galaxy_name: franklinkim.git
+galaxy_name: weareinteractive.git
 github_user: weareinteractive
 github_name: ansible-git
 badges: |
   [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-git.svg)](https://travis-ci.org/weareinteractive/ansible-git)
-  [![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.git-blue.svg)](https://galaxy.ansible.com/franklinkim/git)
+  [![Galaxy](http://img.shields.io/badge/galaxy-weareinteractive.git-blue.svg)](https://galaxy.ansible.com/weareinteractive/git)
   [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-git.svg)](https://github.com/weareinteractive/ansible-git)
   [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-git.svg)](https://github.com/weareinteractive/ansible-git)
 description: |
   > * installs git
   > * configures git
   > * manages repositories
+
+  **Note:**
+
+  > Since Ansible Galaxy switched all role names to the organization name, this role has moved from `weareinteractive.git` to `weareinteractive.git`!

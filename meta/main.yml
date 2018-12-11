@@ -1,10 +1,9 @@
 ---
-
 galaxy_info:
   author: franklin <franklin@weareinteractive.com>
   company: We Are Interactive
   description: Installs git and sets global options
-  min_ansible_version: 2.0
+  min_ansible_version: 2.4
   license: MIT
   # Optionally specify the branch Galaxy will use when accessing the GitHub
   # repo for this role. During role install, if no tags are available,

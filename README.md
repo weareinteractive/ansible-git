@@ -1,34 +1,38 @@
-# Ansible franklinkim.git role
+# Ansible weareinteractive.git role
 
 [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-git.svg)](https://travis-ci.org/weareinteractive/ansible-git)
-[![Galaxy](http://img.shields.io/badge/galaxy-franklinkim.git-blue.svg)](https://galaxy.ansible.com/franklinkim/git)
+[![Galaxy](http://img.shields.io/badge/galaxy-weareinteractive.git-blue.svg)](https://galaxy.ansible.com/weareinteractive/git)
 [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-git.svg)](https://github.com/weareinteractive/ansible-git)
 [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-git.svg)](https://github.com/weareinteractive/ansible-git)
 
-> `franklinkim.git` is an [Ansible](http://www.ansible.com) role which:
+> `weareinteractive.git` is an [Ansible](http://www.ansible.com) role which:
 >
 > * installs git
 > * configures git
 > * manages repositories
+
+**Note:**
+
+> Since Ansible Galaxy switched all role names to the organization name, this role has moved from `weareinteractive.git` to `weareinteractive.git`!
 
 ## Installation
 
 Using `ansible-galaxy`:
 
 ```shell
-$ ansible-galaxy install franklinkim.git
+$ ansible-galaxy install weareinteractive.git
 ```
 
 Using `requirements.yml`:
 
 ```yaml
-- src: franklinkim.git
+- src: weareinteractive.git
 ```
 
 Using `git`:
 
 ```shell
-$ git clone https://github.com/weareinteractive/ansible-git.git franklinkim.git
+$ git clone https://github.com/weareinteractive/ansible-git.git weareinteractive.git
 ```
 
 ## Dependencies
@@ -109,8 +113,9 @@ This is an example playbook:
 ---
 
 - hosts: all
+  become: yes
   roles:
-    - franklinkim.git
+    - weareinteractive.git
   vars:
     git_config:
       color:
@@ -122,7 +127,7 @@ This is an example playbook:
         default: matching
     git_repositories:
       - repo: https://github.com/weareinteractive/ansible-git.git
-        dest: /tmp/franklinkim.git
+        dest: /tmp/weareinteractive.git
 
 ```
 
