@@ -28,4 +28,3 @@
     group: "{{ item.group if item.group is defined else (git_group if git_group else omit) }}"
     recurse: true
   with_items: "{{ git_repositories }}"
-  when: git_repositories

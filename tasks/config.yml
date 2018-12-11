@@ -2,7 +2,7 @@
 
 - name: Configuring git
   template:
-    src: etc-gitconfig.j2
+    src: etc/gitconfig.j2
     dest: /etc/gitconfig
     owner: root
     group: root

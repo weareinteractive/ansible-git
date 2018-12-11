@@ -1,20 +1,15 @@
 ---
 
-- name: Adding APT repository
-  apt_repository:
-    repo: "{{ git_repo }}"
-    update_cache: yes
-
 - name: Installing packages
-  apt:
-    pkg: "{{ git_package }}"
+  package:
+    name: "{{ git_package }}"
     state: present
 
 - name: Installing SSH key
   template:
-    src: etc-ssh-ssh_git.key.j2
-    dest: "/etc/ssh/ssh_git.key"
-    owner: "root"
-    group: "root"
-    mode: "0600"
+    src: etc/ssh/ssh_git.key.j2
+    dest: /etc/ssh/ssh_git.key
+    owner: root
+    group: root
+    mode: 0600
   when: git_key

@@ -32,10 +32,8 @@
 #      group: ...
 #
 
-# apt repository
-git_repo: ppa:git-core/ppa
 # define package (version)
-git_package: git-core
+git_package: git
 # git global configuration settings
 git_config: {}
 # list of repositories (http://docs.ansible.com/git_module.html)
