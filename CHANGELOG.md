@@ -1,3 +1,14 @@
+<a name="1.3.0"></a>
+## 1.3.0 (2018-12-11)
+
+
+#### Features
+
+*   remove obsolete apt repo, use standard package module & adopt syntax ([8a3e3e0c](https://github.com/weareinteractive/ansible-git/commit/8a3e3e0ca52cd2f356cd8f1af61f56487d5844d6))
+*   update for ansible >2.4 ([e4e8757d](https://github.com/weareinteractive/ansible-git/commit/e4e8757d36e2ffc104ad2acca3b1b0147a76b364))
+
+
+
 <a name="1.2.2"></a>
 ### 1.2.2 (2016-09-12)
 
