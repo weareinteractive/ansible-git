@@ -2,9 +2,10 @@ PWD=$(shell pwd)
 ROLE_NAME=weareinteractive.git
 ROLE_PATH=/etc/ansible/roles/$(ROLE_NAME)
 TEST_VERSION=ansible --version
+TEST_DEPS=apt-get update
 TEST_SYNTAX=ansible-playbook -v -i 'localhost,' -c local $(ROLE_PATH)/tests/main.yml --syntax-check
 TEST_PLAYBOOK=ansible-playbook -vvvv -i 'localhost,' -c local $(ROLE_PATH)/tests/main.yml
-TEST_CMD=$(TEST_VERSION); $(TEST_SYNTAX); $(TEST_PLAYBOOK); $(TEST_PLAYBOOK)
+TEST_CMD=$(TEST_DEPS); $(TEST_VERSION); $(TEST_SYNTAX); $(TEST_PLAYBOOK); $(TEST_PLAYBOOK)
 
 ubuntu16.04: dist=ubuntu-16.04
 ubuntu16.04: .run
