@@ -1,3 +1,13 @@
+<a name="1.3.1"></a>
+### 1.3.1 (2020-04-22)
+
+
+#### Bug Fixes
+
+*   fix documentation link ([cd320251](https://github.com/weareinteractive/ansible-git/commit/cd3202511d546d328fdaf1d65c1a83692491ea41))
+
+
+
 <a name="1.3.0"></a>
 ## 1.3.0 (2018-12-11)
 
