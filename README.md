@@ -37,7 +37,7 @@ $ git clone https://github.com/weareinteractive/ansible-git.git weareinteractive
 
 ## Dependencies
 
-* Ansible >= 2.0
+* Ansible >= 2.4
 
 ## Variables
 
@@ -46,7 +46,7 @@ Here is a list of all the default variables for this role, which are also availa
 ```yaml
 ---
 # For more information about default variables see:
-# http://www.ansibleworks.com/docs/playbooks_variables.html#id26
+# https://docs.ansible.com/ansible/latest/modules/git_module.html
 #
 # git_config:
 #   color:
@@ -78,8 +78,6 @@ Here is a list of all the default variables for this role, which are also availa
 #      group: ...
 #
 
-# apt repository
-git_repo: ppa:git-core/ppa
 # define package (version)
 git_package: git-core
 # git global configuration settings

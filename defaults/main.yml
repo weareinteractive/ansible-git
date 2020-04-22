@@ -1,6 +1,6 @@
 ---
 # For more information about default variables see:
-# http://www.ansibleworks.com/docs/playbooks_variables.html#id26
+# https://docs.ansible.com/ansible/latest/modules/git_module.html
 #
 # git_config:
 #   color:
