@@ -12,4 +12,4 @@
     owner: root
     group: root
     mode: 0600
-  when: git_key
+  when: git_key|length > 0
